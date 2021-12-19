@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(mLayoutManager);
 
         //for empty card set image=0, title = null, for standart textsize textSize = 0(default 40sp)
-        list.add(new MainMenuItem(R.drawable.ic_font_24, R.drawable.ic_share_24, "создать новый шрифт", "поделиться", 35, 0));
-        list.add(new MainMenuItem(R.drawable.ic_newfile_24, R.drawable.ic_createnote_24, "новый документ", "добавить заметку", 0, 0));
-        list.add(new MainMenuItem(R.drawable.ic_webtotext_24, 0, "преобразовать из веб-страницы", null, 30, 0));
+        list.add(new MainMenuItem(R.drawable.ic_font_24, R.drawable.ic_myfonts_24, "создать новый шрифт", "мои шрифты", 35, 45));
+        list.add(new MainMenuItem(R.drawable.ic_newfile_24, R.drawable.ic_share_24, "новый документ", "поделиться", 0, 0));
+        list.add(new MainMenuItem(R.drawable.ic_createnote_24, R.drawable.ic_webtotext_24, "добавить заметку", "преобразовать из веб-страницы", 0, 30));
+
 
         LinearLayoutManager llm = new  LinearLayoutManager(this);
         rv.setLayoutManager(llm);
@@ -156,6 +157,11 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case "преобразовать из веб-страницы":
                             intent = new Intent(AppContext, WebToTextActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            AppContext.startActivity(intent);
+                            break;
+                        case "мои шрифты":
+                            intent = new Intent(AppContext, MyFontsActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             AppContext.startActivity(intent);
                             break;

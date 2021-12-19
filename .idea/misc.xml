@@ -5,15 +5,18 @@
       <map>
         <entry key="..\:/Users/Ilya/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/activity_list_item.xml" value="0.134375" />
         <entry key="..\:/Users/Ilya/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.134375" />
+        <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable/ic_baseline_insert_drive_file_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable/ic_createnote_24.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable/ic_font_24.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable/ic_myfonts_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable/ic_newfile_24.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable/ic_share_24.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/drawable/ic_webtotext_24.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/font/font.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/layout/activity_create_note.xml" value="0.15" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/layout/activity_my_fonts.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/layout/activity_new_doc.xml" value="0.15" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/layout/activity_new_font.xml" value="0.16" />
         <entry key="..\:/Users/Ilya/Desktop/tz/app/app/src/main/res/layout/activity_share.xml" value="0.1359375" />

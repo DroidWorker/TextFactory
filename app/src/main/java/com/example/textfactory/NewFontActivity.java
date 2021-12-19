@@ -187,6 +187,7 @@ public class NewFontActivity extends AppCompatActivity {
         Toast.makeText(this, sample, Toast.LENGTH_LONG).show();//--------------
         Log.i("DataOutput",sample);
         //create dataOutput---------------------------------------
+
         //this.finish();
     }
 

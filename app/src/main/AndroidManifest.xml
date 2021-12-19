@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TextFactory">
         <activity
+            android:name=".MyFontsActivity"
+            android:exported="false" />
+        <activity
             android:name=".WebToTextActivity"
             android:exported="false" />
         <activity
