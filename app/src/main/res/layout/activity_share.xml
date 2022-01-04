@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".ShareActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="horizontal"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clicked"
+                android:text="Button" />
+
+            <WebView
+                android:id="@+id/applyingDialogWV"
+                android:layout_width="700dp"
+                android:layout_height="600dp"
+                android:layout_marginTop="40dp"
+                android:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
