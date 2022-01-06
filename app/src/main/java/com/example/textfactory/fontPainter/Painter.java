@@ -1,4 +1,4 @@
-package com.example.textfactory;
+package com.example.textfactory.fontPainter;
 
 import android.content.Context;
 import android.graphics.Bitmap;

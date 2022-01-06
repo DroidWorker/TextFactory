@@ -2,30 +2,24 @@ package com.example.textfactory;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Log;
+import android.view.ContentInfo;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.example.textfactory.fontPainter.Painter;
+import com.example.textfactory.fontPainter.SVGconverter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -137,6 +131,8 @@ public class NewFontActivity extends AppCompatActivity {
 
     public void onCreateFontClick(View v)
     {
+        fontBuilder.saveCurrentLetter(painter.getImageCoords());
+        fontBuilder.convertAlltoSVG(this);
         /*HashMap<Integer, Integer[]> letterList = new HashMap<>();
         String myLetters = "";
         for (Character c:lettersList
@@ -166,7 +162,7 @@ public class NewFontActivity extends AppCompatActivity {
         LayoutInflater li = LayoutInflater.from(this);
         View dialogView = li.inflate(R.layout.accept_creation_dialog, null);
         dialogBuilder.setView(dialogView);
-        dialogBuilder.show();
+        //dialogBuilder.show();
     }
 
     public void onClearLetterClick(View v)
@@ -187,8 +183,8 @@ public class NewFontActivity extends AppCompatActivity {
 
     public class LetterHandler
     {
-        HashMap<String, String> LetterCoods;
-        int letterId;
+        private HashMap<String, String> LetterCoods;
+        private int letterId;
 
         public LetterHandler(int letterId)
         {
@@ -251,6 +247,24 @@ public class NewFontActivity extends AppCompatActivity {
                 if (lh.letterId==code) return lh;
             }
             return null;
+        }
+
+        public HashMap<Integer, String> convertAlltoSVG(Context ctx)//returns <lettercode, svgPath>
+        {
+            HashMap<Integer, String> svgLetters = new HashMap<>();
+            SVGconverter svgConverter = new SVGconverter(ctx);
+            DisplayMetrics displaymetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+            int screenWidth = displaymetrics.widthPixels;
+            for (LetterHandler lh:letters
+                 ) {
+                if (lh.getLetter()!=null) {
+                    Integer i = lh.getLetterId();
+                    String s = svgConverter.convert(lh.getLetter(), 30, screenWidth);
+                    svgLetters.put(i, s);
+                }
+            }
+            return svgLetters;
         }
 
         void sort()
