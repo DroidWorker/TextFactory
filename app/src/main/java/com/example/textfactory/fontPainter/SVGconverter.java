@@ -54,8 +54,6 @@ public class SVGconverter {
                         float koeff=(dx*100)/(dx+dy);
                         my=(brushSize*koeff)/200;
                 }
-                //mx = Math.abs(mx);
-                //my = Math.abs(my);
                 //calculate svg coords
                 float svgX1, svgY1, svgX2, svgY2, svgX3, svgY3, svgX4, svgY4;
                 if (x1<x2&&y1<y2){
@@ -94,6 +92,4 @@ public class SVGconverter {
         Log.i("result Path", res);
         return res;
     }
-
-
 }

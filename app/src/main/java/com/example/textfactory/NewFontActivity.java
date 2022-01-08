@@ -4,7 +4,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.res.XmlResourceParser;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,6 +22,7 @@ import android.widget.TextView;
 
 import com.example.textfactory.fontPainter.Painter;
 import com.example.textfactory.fontPainter.SVGconverter;
+import com.example.textfactory.xmlHandler.XMLparser;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -132,7 +135,9 @@ public class NewFontActivity extends AppCompatActivity {
     public void onCreateFontClick(View v)
     {
         fontBuilder.saveCurrentLetter(painter.getImageCoords());
-        fontBuilder.convertAlltoSVG(this);
+        //devinfo start animation with ProgressBar| back: movies letters; front ProgressBarView
+        XMLparser.parse(fontBuilder.convertAlltoSVG(this), FontName,this);
+
         /*HashMap<Integer, Integer[]> letterList = new HashMap<>();
         String myLetters = "";
         for (Character c:lettersList
